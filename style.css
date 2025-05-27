@@ -1,1 +1,101 @@
 /* Add your CSS here */
+
+/* Set the website background image */
+body {
+  /* Use the new Intel chip animation as the background */
+  background-image: url('https://pbs-prod.linustechtips.com/gallery/album_2009/gallery_34301_2009_323039.jpg');
+  background-size: cover;      /* Make the image cover the whole screen */
+  background-repeat: no-repeat;/* Do not repeat the image */
+  background-attachment: fixed;/* Keep the image fixed when scrolling */
+  background-position: center; /* Center the image */
+  /* Optional: add a slight overlay for readability */
+  padding-bottom: 100px; /* Adds space at the bottom */
+}
+
+/* Style for the header with Intel blue background and a custom image */
+.intel-header {
+  /* Set the header background to the provided GIF */
+  background-image: url('https://images.squarespace-cdn.com/content/v1/57fe5498bebafb1fb0b79e65/1688689234576-CGLVIQRCCZ4K0LW5099W/Intel_AWorldYouDefine_Desktop_Longform_m.gif');
+  background-size: cover;      /* Make the image cover the header */
+  background-repeat: no-repeat;/* Do not repeat the image */
+  background-position: center; /* Center the image */
+  color: white;                /* Make text white for contrast */
+  padding: 40px 0;             /* Add space above and below */
+  text-align: center;          /* Center the content */
+}
+
+/* Make sure images in the header look good on blue */
+.intel-header img {
+  width: 200px;   /* Makes the logo 200 pixels wide */
+  display: block; /* Makes sure the logo is on its own line */
+  margin: 0 auto 20px auto; /* Centers the logo and adds space below */
+}
+
+/* Make the header text glow for a cool effect */
+.intel-header h1,
+.intel-header p {
+  text-shadow:
+    0 0 8px #00aaff,   /* Blue glow close to text */
+    0 0 16px #00aaff,  /* Larger blue glow */
+    0 0 24px #fff;     /* Soft white outer glow */
+}
+
+/* Timeline cards container - horizontal scroll on large screens */
+.timeline-cards {
+  display: flex; /* Put cards in a row */
+  overflow-x: auto; /* Allow horizontal scrolling */
+  gap: 16px; /* Space between cards */
+  padding: 20px; /* Space around the cards */
+}
+
+/* Each timeline card */
+.timeline-card {
+  background: #111;      /* Black background for the card */
+  color: #fff;           /* White text for the card */
+  border-radius: 10px;   /* Rounded corners */
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1); /* Soft shadow */
+  min-width: 250px;
+  max-width: 250px;
+  flex: 0 0 250px;       /* Prevent cards from shrinking or growing */
+  padding: 16px;
+  box-sizing: border-box;
+}
+
+/* Make images inside cards fit nicely */
+.timeline-card img {
+  width: 100%; /* Image fills the card width */
+  height: 180px; /* Makes the image taller */
+  object-fit: cover; /* Keeps the image from stretching */
+  border-radius: 6px;
+  margin-bottom: 0; /* Remove space below image */
+  display: block;
+}
+
+/* Hide the description by default */
+.timeline-card p {
+  display: none; /* Hide the description */
+  margin-top: 10px; /* Space above description when shown */
+}
+
+/* Show the description only when hovering over the image */
+.timeline-card img:hover + p {
+  display: block; /* Show the description */
+  background: #f0f8ff; /* Light background for readability */
+  color: #222;
+  padding: 10px;
+  border-radius: 6px;
+}
+
+/* On small screens, stack cards vertically */
+@media (max-width: 600px) {
+  .timeline-cards {
+    display: block; /* Stack cards vertically */
+    overflow-x: visible; /* No horizontal scroll needed */
+    padding: 10px;
+  }
+  .timeline-card {
+    max-width: 100%; /* Cards take full width */
+    min-width: 0;
+    margin-bottom: 16px; /* Space between cards */
+  }
+}
